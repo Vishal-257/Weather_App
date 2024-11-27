@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Get Weather Details</h1>
+        <form action="/submit" method="post">
+           <div class="input">
+            <input class="search-bar" type="text" name="location" placeholder="Enter Your City">
+            <!-- <input class="search" type="submit" value="Get Weather"> -->
+             <button type="submit" class="search">
+                <img src="../images/search2.png" alt="">
+             </button>
+           </div>
+        </form>
+        <% if(locals.content) {%>
+            <h2>
+                <%= content.loc %>
+            </h2>
+            <h3>Weather: <%= content.weather %>
+            </h3>
+            <h3>Temperature: <%= content.temp %>
+            </h3>
+            <h3>Feels Like: <%= content.feel_temp %>
+            </h3>
+            <h3>Minimum Temperature: <%= content.min_temp %>
+            </h3>
+            <h3>Maximum Temperature: <%= content.max_temp %>
+            </h3>
+            <h3>Humidity: <%= content.humidity %>
+            </h3>
+            <% } %>
+    </div>
+</body>
+
+</html>
